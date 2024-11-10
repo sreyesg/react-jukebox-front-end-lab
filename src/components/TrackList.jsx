@@ -1,12 +1,12 @@
 const TrackList = (props) => {
-    console.log(props.updateSelected)
-
     
     const tracks = props.trackList.map((track) => (
-        
-        <a key={track._id} onClick={() => props.updateSelected(track)}>
-            <li>{track.title}</li>
-        </a>
+
+        <article key={track._id}>
+            <h2>{track.title}</h2>
+            <p>Artist: {track.artist}</p>
+            <button>Play</button>
+        </article>
     ))
     
     return(

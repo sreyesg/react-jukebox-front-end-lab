@@ -3,10 +3,12 @@ import './App.css'
 import * as trackService from './services/trackServices'
 import TrackList from './components/TrackList'
 import TrackDetails from './components/TrackDetails'
+import TrackForm from './components/TrackForm'
 
 function App() {
   const [trackList, setTrackList] = useState([])
   const [selected, setSelected] = useState([])
+  const [isFormOpen, setIsFormOpen] =useState(false)
   // Default Data
   useEffect(() => {
     
@@ -28,11 +30,19 @@ function App() {
   const updateSelected = (selectedTrack) => {
     setSelected(selectedTrack)  
   }
+  const updateIsFormOpen = () => {
+    setIsFormOpen(!isFormOpen)
+  }
 
+  const addNewTrack = (formData) => {
+    console.log(formData,'for new Track')
+  }
   return (
     <>
     <h1>Jukebox</h1>
       
+      <button onClick={updateIsFormOpen}>{isFormOpen ? "close Form": "New Track"}</button>
+      {isFormOpen ? <TrackForm addNewTrack={addNewTrack}/>:''}
       <TrackList 
       trackList={trackList}
       updateSelected={updateSelected}
