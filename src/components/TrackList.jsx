@@ -6,6 +6,7 @@ const TrackList = (props) => {
             <h2>{track.title}</h2>
             <p>Artist: {track.artist}</p>
             <button>Play</button>
+            <button onClick={() => props.removeTrack(track._id)}>Delete</button>
         </article>
     ))
     
