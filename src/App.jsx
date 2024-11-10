@@ -34,8 +34,19 @@ function App() {
     setIsFormOpen(!isFormOpen)
   }
 
-  const addNewTrack = (formData) => {
-    console.log(formData,'for new Track')
+  const addNewTrack = async(formData) => {
+    try {
+      const newTrack = await trackService.create(formData)
+      if(newTrack.error){
+        throw new Error(newTrack.error)
+      }
+      setTrackList([...trackList, newTrack])
+      setIsFormOpen(false)
+
+    } catch (error) {
+      console.log(error)
+    }
+
   }
   return (
     <>
@@ -48,12 +59,6 @@ function App() {
       updateSelected={updateSelected}
       />
       
-      {selected.length === 0 ? (<h2>No Track selected</h2>)
-      :(
-      <TrackDetails 
-      selected={selected}/>
-      
-      )}
     </>
   )
 }

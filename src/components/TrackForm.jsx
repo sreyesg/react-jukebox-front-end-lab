@@ -15,6 +15,7 @@ const TrackForm = (props) => {
     const hanldeSubmit = (event) => {
         event.preventDefault()
         props.addNewTrack(formData)
+        setFormData(initialState)
 
     }
     return(

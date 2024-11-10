@@ -14,7 +14,7 @@ const index = async() => {
 // Create 
 const create = async(formData) => {
     try {
-        res = await fetch(BASE_URL,{
+        const res = await fetch(BASE_URL,{
             method: "POST",
             headers: {"content-type": "application/json"},
             body: JSON.stringify(formData)
@@ -29,7 +29,7 @@ const create = async(formData) => {
 
 const update = (formData, petId) => {
     try {
-        res = fetch(`${BASE_URL}/${petId}`,{
+        const res = fetch(`${BASE_URL}/${petId}`,{
             method: "PUT",
             headers: {"content-type":"application/json"},
             body: JSON.stringify(formData)
@@ -42,7 +42,7 @@ const update = (formData, petId) => {
 
 const remove = async(trackId)=> {
     try {
-        res = await fetch(`${BASE_URL}/${trackId}`, {
+        const res = await fetch(`${BASE_URL}/${trackId}`, {
             method: "DELETE"
         })
         return res.json()
