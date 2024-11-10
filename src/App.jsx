@@ -1,6 +1,7 @@
 import { useState,useEffect } from 'react'
 import './App.css'
 import * as trackService from './services/trackServices'
+import TrackList from './components/TrackList'
 
 
 function App() {
@@ -24,7 +25,8 @@ function App() {
   [])
   return (
     <>
-    <h1>This is my app</h1>
+    <h1>Jukebox</h1>
+      <TrackList trackList={trackList} />
     </>
   )
 }
