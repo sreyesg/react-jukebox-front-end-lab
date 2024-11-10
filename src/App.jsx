@@ -2,7 +2,7 @@ import { useState,useEffect } from 'react'
 import './App.css'
 import * as trackService from './services/trackServices'
 import TrackList from './components/TrackList'
-
+import TrackDetails from './components/TrackDetails'
 
 function App() {
   const [trackList, setTrackList] = useState([])
@@ -32,10 +32,18 @@ function App() {
   return (
     <>
     <h1>Jukebox</h1>
+      
       <TrackList 
       trackList={trackList}
       updateSelected={updateSelected}
       />
+      
+      {selected.length === 0 ? (<h2>No Track selected</h2>)
+      :(
+      <TrackDetails 
+      selected={selected}/>
+      
+      )}
     </>
   )
 }
