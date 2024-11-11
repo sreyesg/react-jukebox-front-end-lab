@@ -56,19 +56,22 @@ function App() {
     setTrackList(trackList.filter((track) => track._id !== removedTrack._id))
   }
   return (
-    <>
+    <main>
     <h1>Jukebox</h1>
       
-      <button onClick={updateIsFormOpen}>{isFormOpen ? "close Form": "New Track"}</button>
-      {isFormOpen ? <TrackForm addNewTrack={addNewTrack}/>:''}
-      <TrackList 
-      trackList={trackList}
-      removeTrack={removeTrack}
-      updateSelected={updateSelected}
-
-      />
+      <button id="addNew" onClick={updateIsFormOpen}>{isFormOpen ? "close Form": "Add New Track"}</button>
       
-    </>
+      
+      {isFormOpen ? <TrackForm addNewTrack={addNewTrack}/>:''}
+      <div className="trackList">
+        <TrackList   
+        trackList={trackList}
+        removeTrack={removeTrack}
+        updateSelected={updateSelected}
+        />
+      </div>
+      
+    </main>
   )
 }
 

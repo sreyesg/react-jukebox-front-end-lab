@@ -1,8 +1,5 @@
-# React + Vite
+# Jukebox
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The community center of Reactville is launching an exciting project—a public jukebox! Your task is to help them build an interactive user interface where everyone can collaborate to manage the track library. Users will be able to add, update, and remove tracks, creating a dynamic playlist that all residents can enjoy at town events!
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![](./public/Jukebox.png)

@@ -40,3 +40,32 @@
 .read-the-docs {
   color: #888;
 }
+
+#addNew{
+  color: white;
+  background-color: #FF5733;
+  width: 200px;
+  align-self: center;
+}
+main{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  height: 70vh;
+
+}
+.trackList{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+
+}
+article{
+  gap: 10px;
+  background-color: #333333;
+}
+article h2{
+  color: #FF5733;
+}
